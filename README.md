@@ -1,5 +1,3 @@
-uv run uvicorn main:app --host 0.0.0.0 --port 8000
-
 # English Tutor API (FastAPI + OpenAI)
 
 A lightweight **FastAPI backend** that powers an AI English tutor.
