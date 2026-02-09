@@ -47,7 +47,7 @@ async def chat(payload: ChatRequest):
     )
 
     # LLM
-    text_response = client.responses.create(model=MODEL, input=messages, temperature=0.2)
+    text_response = client.responses.create(model=MODEL, input=messages, temperature=0.8)
     raw_text = text_response.output_text
 
     # TTS Model
@@ -60,10 +60,10 @@ async def chat(payload: ChatRequest):
     with open(filepath, "wb") as f:
         f.write(audio_response.read())
 
-
     return {
         "agent_text_message": raw_text,
         "agent_audio_message": f"/{AUDIO_DIR}/{filename}",
+        "format": "mp3"
     }
 
 
